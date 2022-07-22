@@ -17,8 +17,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-"Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-unimpaired'
@@ -129,7 +128,7 @@ endif
 " Highlight line number
 set cursorline
 set cursorlineopt=number
-"autocmd ColorScheme * highlight CursorLineNr ctermbg=NONE
+autocmd ColorScheme * highlight CursorLineNr ctermbg=NONE
 
 " Disable fast jumping(when using shift) in normal/visual mode
 nnoremap <silent> <S-Up> :-5<CR>
@@ -156,8 +155,7 @@ command! Q q
 " -------------------- PLUGINS ------------------------
 
 " #### Gruvbox #####
-"autocmd vimenter * ++nested colorscheme gruvbox
-colorscheme onedark
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " #### NerdTree ####
 " Toggle
@@ -191,7 +189,7 @@ let b:airline_disable_statusline = 1
 
 " #### Fugitive ####
 nmap <leader>gb :Git blame<CR>
-nmap <leader>gd :Gdiff<CR>
+nmap <leader>gd :Git diff<CR>
 nnoremap <silent> <leader>dp V:diffput<CR>
 nnoremap <silent> <leader>dg V:diffget<CR>
 
