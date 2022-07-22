@@ -21,12 +21,8 @@ Plug 'morhetz/gruvbox'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-unimpaired'
-"Plug 'kana/vim-fakeclip'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'skywind3000/gutentags_plus'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'chazy/cscope_maps' "fzf should replace this
 call plug#end()
 filetype plugin indent on
 
@@ -61,9 +57,6 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-
-" Enable mouse for n(ormal) and v(isual) modes
-"set mouse=nv
 
 " Enable hidden buffers
 set hidden
@@ -137,11 +130,16 @@ set cursorline
 set cursorlineopt=number
 autocmd ColorScheme * highlight CursorLineNr ctermbg=NONE
 
+" Disable fast jumping(when using shift) in normal/visual mode
+nnoremap <silent> <S-Up> :-5<CR>
+nnoremap <silent> <S-Down> :+5<CR>
+vnoremap <silent> <S-Up> -5
+vnoremap <silent> <S-Down> +5
+
 " -------------------- PLUGINS ------------------------
 
 " #### Fakeclip ####
 " let g:fakeclip_terminal_multiplexer_type = 'tmux'
-
 
 " #### Gruvbox #####
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -200,6 +198,7 @@ endfunction
 nnoremap <silent> <C-p> :call FZFOpen(":Files")<CR>
 nnoremap <silent> <leader>F :Ag <C-R><C-W><CR>
 nnoremap <silent> <leader>f :Ag <CR>
+
 
 " #### Git-gutter ####
 nmap <F10> :GitGutterLineHighlightsToggle<CR>
