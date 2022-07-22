@@ -189,7 +189,7 @@ let b:airline_disable_statusline = 1
 
 " #### Fugitive ####
 nmap <leader>gb :Git blame<CR>
-nmap <leader>gd :Git diff<CR>
+nmap <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>dp V:diffput<CR>
 nnoremap <silent> <leader>dg V:diffget<CR>
 
