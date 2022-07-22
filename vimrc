@@ -75,10 +75,10 @@ set ruler
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
-" Disable Ex mode mapping
+" Disable Ex mode
 nnoremap Q <Nop>
 
-" Remove trailing spaces
+" Remove trailing spaces with <F12>
 function ShowSpaces(...)
 	let @/='\v(\s+$)|( +\ze\t)'
 	let oldhlsearch=&hlsearch
@@ -115,7 +115,7 @@ if has('unnamedplus')
 endif
 
 
-"" WSL clipboard support(auto detect)
+"" WSL clipboard support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'
 if executable(s:clip)
 	augroup WSLYank
@@ -140,10 +140,14 @@ vnoremap <silent> <S-Down> +5
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
-" -------------------- PLUGINS ------------------------
+" True colors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
-" #### Fakeclip ####
-" let g:fakeclip_terminal_multiplexer_type = 'tmux'
+" -------------------- PLUGINS ------------------------
 
 " #### Gruvbox #####
 autocmd vimenter * ++nested colorscheme gruvbox

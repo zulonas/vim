@@ -1,7 +1,6 @@
 ## VIM config
 
 ### Installation
-```
-git clone https://github.com/zulonas/vim.git ~/vim
-ln -s ~/vim ~/.vim
+```bash
+git clone https://github.com/zulonas/vim.git ~/.vim
 ```
