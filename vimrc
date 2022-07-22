@@ -198,8 +198,8 @@ endfunction
 
 " fzf mapings
 nnoremap <silent> <C-p> :call FZFOpen(":Files")<CR>
-nnoremap <silent> <leader>f :Ag <C-R><C-W><CR>
-nnoremap <silent> <leader>F :Ag <CR>
+nnoremap <silent> <leader>F :Ag <C-R><C-W><CR>
+nnoremap <silent> <leader>f :Ag <CR>
 
 " #### Git-gutter ####
 nmap <F10> :GitGutterLineHighlightsToggle<CR>
