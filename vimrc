@@ -136,6 +136,10 @@ nnoremap <silent> <S-Down> :+5<CR>
 vnoremap <silent> <S-Up> -5
 vnoremap <silent> <S-Down> +5
 
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 " -------------------- PLUGINS ------------------------
 
 " #### Fakeclip ####
