@@ -148,6 +148,11 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" Alias
+command! Wq wq
+command! W w
+command! Q q
+
 " -------------------- PLUGINS ------------------------
 
 " #### Gruvbox #####
