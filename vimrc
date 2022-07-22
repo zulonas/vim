@@ -23,6 +23,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 filetype plugin indent on
 
