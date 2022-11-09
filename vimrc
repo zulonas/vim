@@ -113,6 +113,8 @@ command Json call FormatJson()
 " Clipboard support
 if has('unnamedplus')
 	set clipboard=unnamed,unnamedplus
+else
+	set clipboard=unnamed
 endif
 
 
