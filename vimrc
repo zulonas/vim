@@ -219,7 +219,7 @@ nmap <leader>q :BD<cr>
 
 " #### cscope-vim ####
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR
+nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " s: Find this C symbol
 nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
