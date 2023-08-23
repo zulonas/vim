@@ -24,7 +24,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'brookhong/cscope.vim'
 call plug#end()
 filetype plugin indent on
 
@@ -207,6 +206,7 @@ endfunction
 " fzf mapings
 nnoremap <silent> <C-p> :call FZFOpen(":Files")<CR>
 nnoremap <silent> <leader>F :Ag <C-R><C-W><CR>
+nnoremap <silent> <leader>f :Ag <CR>
 
 
 " #### Git-gutter ####
@@ -215,25 +215,3 @@ nmap <F10> :GitGutterLineHighlightsToggle<CR>
 
 " #### vim-buffkill ####
 nmap <leader>q :BD<cr>
-
-
-" #### cscope-vim ####
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR>
-
-" s: Find this C symbol
-nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
-" g: Find this definition
-nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
-" d: Find functions called by this function
-nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
-" c: Find functions calling this function
-nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
-" t: Find this text string
-nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
-" e: Find this egrep pattern
-nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
-" f: Find this file
-nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
-" i: Find files #including this file
-nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
