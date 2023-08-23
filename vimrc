@@ -139,6 +139,16 @@ nnoremap <silent> <S-Down> :+5<CR>
 vnoremap <silent> <S-Up> -5
 vnoremap <silent> <S-Down> +5
 
+function! ReplaceCurrentWord()
+    let search_string = expand("<cword>")
+    let replace_string = input('Replace: ', search_string)
+    if replace_string == "" || replace_string == search_string
+        return
+    endif
+    execute '%s/\<' . search_string . '\>/' . replace_string . '/gc'
+endfunction
+nnoremap <F2> :call ReplaceCurrentWord()<CR>
+
 " Spell-check Markdown files and Git Commit Messages
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
