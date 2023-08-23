@@ -149,6 +149,14 @@ function! ReplaceCurrentWord()
 endfunction
 nnoremap <F2> :call ReplaceCurrentWord()<CR>
 
+function! GenerateTagsAndCscope()
+    silent !ctags -R
+    silent !cscope -Rb
+    redraw!
+    echo "Generated"
+endfunction
+nnoremap <leader>t :call GenerateTagsAndCscope()<CR>
+
 " Spell-check Markdown files and Git Commit Messages
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
