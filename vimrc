@@ -24,6 +24,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'dense-analysis/ale'
 call plug#end()
 filetype plugin indent on
 
@@ -371,3 +372,7 @@ nmap <F10> :GitGutterLineHighlightsToggle<CR>
 
 " #### vim-buffkill ####
 nmap <leader>q :BD<cr>
+
+
+" #### ale ####
+let b:ale_fixers = ['stylua']
