@@ -73,6 +73,9 @@ set paste
 " Set ruller
 set ruler
 
+" Disable automatic newline
+set nofixendofline
+
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
