@@ -28,9 +28,6 @@ Plug 'dense-analysis/ale'
 call plug#end()
 filetype plugin indent on
 
-" Security
-set modelines=0
-
 " Line numbers
 set number
 
