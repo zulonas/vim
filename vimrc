@@ -373,6 +373,23 @@ nmap <F10> :GitGutterLineHighlightsToggle<CR>
 " #### vim-buffkill ####
 nmap <leader>q :BD<cr>
 
-
 " #### ale ####
-let b:ale_fixers = ['stylua']
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_delay = 500
+let g:ale_virtualtext_cursor = 'current'
+
+let g:ale_linters_explicit = 1
+let g:ale_disable_lsp = 1
+
+let g:ale_linters = {
+\   'c':   ['cppcheck'],
+\   'cpp': ['cppcheck'],
+\}
+
+let g:ale_c_cppcheck_options =
+\ '--language=c --force --enable=all --quiet --suppress=missingIncludeSystem'
+
+let g:ale_cpp_cppcheck_options =
+\ '--language=c++ --force --enable=all --quiet --suppress=missingIncludeSystem'
